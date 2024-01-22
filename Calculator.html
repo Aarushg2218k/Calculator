@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        font{
+            font-size: 28px;
+            font-family: MV Boli;
+        }
+        table {
+            width: 400px;
+            height: 500px;
+            border: 2px solid black;
+            margin: auto;
+            margin-top: 40px;
+            background: lightgreen;
+        }
+        input[type="text"]{
+            width: 300px; 
+            height: 30px;
+            margin-top: 5px; 
+            border: 2px solid black; 
+            border-radius: 5px;
+            text-align: right;
+        }
+        input[type="button"]{
+            width: 70px;
+            height: 40px;
+            box-shadow: -3px -3px 8px;
+
+        }
+        input[type="button"]:hover{
+            transform: translate(5px,-5px);
+        }
+        td{
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function docal(me){
+            var val=document.getElementById("screen");
+            val.value = val.value + me;
+        }
+        function doeval(){
+
+        var val=document.getElementById("screen");
+        val.value= eval(val.value);
+        }
+        function doclr(){
+
+        var val=document.getElementById("screen");
+        val.value= val.value.substr(0,val.value.length-1)
+
+        }
+        function doclall(){
+
+            var val=document.getElementById("screen");
+            val.value="";
+        }
+
+        </script>
+</head>
+
+<body>
+    <table rules="all">
+        <tr>
+            <td colspan="4">
+                <center>
+                    <font>Calculator</font>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="screen">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="AC" onclick="doclall();"></td>
+            <td><input type="button" value="%" onclick="docal('%');"></td>
+            <td><input type="button" value="clr" onclick="doclr();"></td>
+            <td><input type="button" value="/" onclick="docal('/');"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="docal('7');"></td>
+            <td><input type="button" value="8" onclick="docal('8');"></td>
+            <td><input type="button" value="9" onclick="docal('9');"></td>
+            <td><input type="button" value="*" onclick="docal('*');"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="docal('4');"></td>
+            <td><input type="button" value="5" onclick="docal('5');"></td>
+            <td><input type="button" value="6" onclick="docal('6');"></td>
+            <td><input type="button" value="-" onclick="docal('-');"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="docal('1');"></td>
+            <td><input type="button" value="2" onclick="docal('2');"></td>
+            <td><input type="button" value="3" onclick="docal('3');"></td>
+            <td><input type="button" value="+" onclick="docal('+');"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="00" onclick="docal('00');"></td>
+            <td><input type="button" value="0" onclick="docal('0');"></td>
+            <td><input type="button" value="." onclick="docal('.');"></td>
+            <td><input type="button" value="=" onclick="doeval();"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
